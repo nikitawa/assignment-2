@@ -23,10 +23,10 @@ public class Assignment2Application implements ApplicationRunner {
 
 	public static void main(String[] args) {
 		// Change ENV string here to switch between StandardConfig and AdditionalConfig
-		// Uncomment to run TASK_1
-		System.setProperty("spring.profiles.active", TASK_1_ENV);
+		//Uncomment to run TASK_1
+		//System.setProperty("spring.profiles.active", TASK_1_ENV);
 		// Uncomment to run TASK_2
-		// System.setProperty("spring.profiles.active", TASK_2_ENV);
+		 System.setProperty("spring.profiles.active", TASK_2_ENV);
 		SpringApplication.run(Assignment2Application.class, args);
 	}
 

@@ -6,6 +6,7 @@ import edu.umd.enpm614.assignment2.interfaces.Persistance;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 @Component
 public class WebServer {
@@ -14,7 +15,7 @@ public class WebServer {
 	private final Persistance persistance;
 
 	@Inject
-	public WebServer(Frontend frontend, Middleware middleware, Persistance persistance) {
+	public WebServer(@Named("frontendHTML") Frontend frontend, @Named("middlewareTomcat") Middleware middleware, @Named("persistanceMySQL") Persistance persistance) {
 		this.frontend = frontend;
 		this.middleware = middleware;
 		this.persistance = persistance;
@@ -31,6 +32,9 @@ public class WebServer {
 		frontend.run();
 		middleware.run();
 		persistance.run();
+
+
+
 		
 		return true;
 	}
