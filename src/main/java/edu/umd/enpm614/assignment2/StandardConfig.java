@@ -24,7 +24,7 @@ public static final String Frontend_standard = "edu.umd.enpm614.Frontend";
     @Bean(name = Frontend_standard)
     public Frontend getFrontend()
     {
-return new FrontendHTML(getAuthentication()) ;
+        return new FrontendHTML(null);
 }
 
     @Bean(name = Middleware_standard)

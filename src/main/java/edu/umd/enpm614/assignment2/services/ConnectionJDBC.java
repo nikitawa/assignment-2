@@ -13,7 +13,7 @@ public class ConnectionJDBC implements Connection {
 		System.out.println("running " + this.getType());
 		
 		// invoke services here if applicable
-		
+
 		return true;
 	}
 }
