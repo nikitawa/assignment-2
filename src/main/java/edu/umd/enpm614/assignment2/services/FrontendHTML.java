@@ -15,7 +15,7 @@ public class FrontendHTML implements Frontend {
 
 	private final Authentication authentication;
 	@Inject
-	public FrontendHTML(@Named("authenticationSSL") Authentication authentication) {
+	public FrontendHTML(@Named("edu.umd.enpm614.Authentication") Authentication authentication) {
 		this.authentication = authentication;
 
 	}

@@ -15,7 +15,7 @@ public class WebServer {
 	private final Persistance persistance;
 
 	@Inject
-	public WebServer(@Named("frontendHTML") Frontend frontend, @Named("middlewareTomcat") Middleware middleware, @Named("persistanceMySQL") Persistance persistance) {
+	public WebServer(@Named("edu.umd.enpm614.Frontend")Frontend frontend,@Named("edu.umd.enpm614.Middleware") Middleware middleware, @Named("edu.umd.enpm614.Persistence") Persistance persistance) {
 		this.frontend = frontend;
 		this.middleware = middleware;
 		this.persistance = persistance;

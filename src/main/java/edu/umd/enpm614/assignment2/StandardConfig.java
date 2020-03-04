@@ -24,7 +24,7 @@ public static final String Frontend_standard = "edu.umd.enpm614.Frontend";
     @Bean(name = Frontend_standard)
     public Frontend getFrontend()
     {
-        return new FrontendHTML(null);
+        return new FrontendHTML(getAuthentication());
 }
 
     @Bean(name = Middleware_standard)
@@ -35,9 +35,10 @@ public static final String Frontend_standard = "edu.umd.enpm614.Frontend";
     @Bean(name = Persistence_standard)
     public Persistance getPersistence()
     {
-        return new PersistanceMySQL(getFileSystem(),getConnection());
+        return new PersistanceMySQL(getFileSystem(),new ConnectionPooled());
     }
 
+    @Primary
     @Bean(name = Authentication_standard)
     public Authentication getAuthentication()
     {
@@ -49,6 +50,7 @@ public static final String Frontend_standard = "edu.umd.enpm614.Frontend";
     {
         return new FileSystemNTFS();
     }
+    @Primary
     @Bean(name = Connection_standard)
     public Connection getConnection()
     {

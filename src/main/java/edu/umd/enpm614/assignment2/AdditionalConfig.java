@@ -31,35 +31,36 @@ ConnectionJDBC
     public static final String Connection_additional = "edu.umd.enpm614.Connection";
 
     @Bean(name = Frontend_additional)
-    public Frontend getFrontend_temp()
+    public Frontend getFrontend()
     {
-        return new FrontendGWT(null);
+        return new FrontendGWT(getAuthentication());
     }
-
+    @Primary
     @Bean(name = Middleware_additional)
-    public Middleware getMiddleware_temp()
+    public Middleware getMiddleware()
     {
         return new MiddlewareJBoss();
     }
     @Bean(name = Persistence_additional)
-    public Persistance getPersistence_temp()
+    public Persistance getPersistence()
     {
-        return new PersistanceOracle();
+        return new PersistanceOracle(getFileSystem(),getConnection());
     }
-
+    @Primary
     @Bean(name = Authentication_additional)
-    public Authentication getAuthentication_temp()
+    public Authentication getAuthentication()
     {
         return new AuthenticationTSL();
     }
     @Primary
     @Bean(name = FileSystem_additional)
-    public FileSystem getFileSystem_temp()
+    public FileSystem getFileSystem()
     {
         return new FileSystemNFS();
     }
+    @Primary
     @Bean(name = Connection_additional)
-    public Connection getConnection_temp()
+    public Connection getConnection()
     {
         return new ConnectionJDBC();
     }

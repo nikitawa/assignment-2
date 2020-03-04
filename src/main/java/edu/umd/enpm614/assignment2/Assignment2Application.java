@@ -1,12 +1,15 @@
 package edu.umd.enpm614.assignment2;
 
 import edu.umd.enpm614.assignment2.application.WebApplication;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 
@@ -24,7 +27,10 @@ public class Assignment2Application implements ApplicationRunner {
 	public static void main(String[] args) {
 		// Change ENV string here to switch between StandardConfig and AdditionalConfig
 		//Uncomment to run TASK_1
+
 		//System.setProperty("spring.profiles.active", TASK_1_ENV);
+
+
 		// Uncomment to run TASK_2
 		 System.setProperty("spring.profiles.active", TASK_2_ENV);
 		SpringApplication.run(Assignment2Application.class, args);
@@ -35,3 +41,17 @@ public class Assignment2Application implements ApplicationRunner {
 		webApplication.run();
 	}
 }
+/*
+@Aspect
+@Component
+public class LoggingAspect{
+
+	//@Around("within(edu.umd.enpm614.assignment2..*)&& execution(* public)")
+
+
+
+
+}
+*/
+
+

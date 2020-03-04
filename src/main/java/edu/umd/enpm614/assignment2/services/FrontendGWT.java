@@ -12,7 +12,7 @@ public class FrontendGWT implements Frontend {
 
 	private final Authentication authentication;
 	@Inject
-	public FrontendGWT(@Named("authenticationTSL") Authentication authentication) {
+	public FrontendGWT(Authentication authentication) {
 		this.authentication = authentication;
 
 	}

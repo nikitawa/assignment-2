@@ -15,7 +15,7 @@ public class PersistanceMySQL implements Persistance {
 	private final FileSystem fileSystem;
 	private final Connection connection;
 	@Inject
-	public PersistanceMySQL(@Named("fileSystemNTFS") FileSystem fileSystem,  Connection connection) {
+	public PersistanceMySQL(FileSystem fileSystem,Connection connection) {
 		this.fileSystem = fileSystem;
 		this.connection=connection;
 
